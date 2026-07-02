@@ -1,0 +1,37 @@
+{
+  "name": "htools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "pages:dev": "npm run build && wrangler pages dev dist --d1 DB --port 8788 --compatibility-date=2026-06-30",
+    "pages:deploy": "npm run build && wrangler pages deploy dist",
+    "db:init:local": "wrangler d1 execute DB --local --config wrangler.local.toml --file db/schema.sql",
+    "db:init:remote": "wrangler d1 execute DB --remote --config wrangler.local.toml --file db/schema.sql"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260620.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.2.7",
+    "wrangler": "^4.55.0"
+  },
+  "overrides": {
+    "esbuild": "0.28.1"
+  }
+}

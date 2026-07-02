@@ -1,0 +1,9 @@
+name = "htools"
+account_id = "your-cloudflare-account-id"
+compatibility_date = "2026-06-30"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "your-d1-database-name"
+database_id = "your-d1-database-id"

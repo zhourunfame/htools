@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Cloudflare / Wrangler local state
+.wrangler/
+wrangler.local.toml
+
+# Local agent workspace
+.agents/
+.logs/
+
+# Local release notes
+CHANGELOG.md
+
+# Local secrets
+.dev.vars
+*.local
+
+# TypeScript cache
+tsconfig.tsbuildinfo

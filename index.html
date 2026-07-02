@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HTools is a curated directory of open-source tools for builders."
+    />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title="HTools RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/feed+json" title="HTools JSON Feed" href="/rss.json" />
+    <script>
+      (() => {
+        try {
+          const mode = localStorage.getItem("htools_theme") || "light";
+          const theme =
+            mode === "system"
+              ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light"
+              : mode === "dark"
+                ? "dark"
+                : "light";
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+          document.documentElement.style.backgroundColor =
+            theme === "dark" ? "#000" : "#fff";
+        } catch {
+          document.documentElement.dataset.theme = "light";
+          document.documentElement.style.colorScheme = "light";
+          document.documentElement.style.backgroundColor = "#fff";
+        }
+      })();
+    </script>
+    <title>HTools</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
