@@ -112,4 +112,4 @@ Public tool, category, article-list, and `/api/htools.json` responses use a 30-s
 
 ## Version
 
-Current version: `HTools v1.0.11`
+Current version: `HTools v1.0.12`

@@ -313,7 +313,6 @@ export const en: Messages = {
   status: {
     loginFailed: "Login failed.",
     sessionExpired: "Your session has expired. Please log in again.",
-    githubLoginSuccess: "GitHub signed in",
     githubLogoutSuccess: "GitHub signed out",
     githubLogoutFailed: "Failed to sign out of GitHub.",
     toolUpdated: "Tool updated.",

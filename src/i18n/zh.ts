@@ -295,7 +295,6 @@ export const zh: Messages = {
   status: {
     loginFailed: "登录失败。",
     sessionExpired: "登录状态已过期，请重新登录。",
-    githubLoginSuccess: "已登录",
     githubLogoutSuccess: "已退出",
     githubLogoutFailed: "退出失败。",
     toolUpdated: "工具已更新。",

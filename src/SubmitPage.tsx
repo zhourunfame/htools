@@ -219,12 +219,7 @@ export default function SubmitPage({
     const params = new URLSearchParams(window.location.search);
     const authResult = params.get("auth");
 
-    if (authResult === "success") {
-      setStatus(t.status.githubLoginSuccess);
-      setStatusTone("success");
-      setStatusScope("auth");
-      setIssueUrl("");
-    } else if (authResult === "failed") {
+    if (authResult === "failed") {
       setStatus(t.status.loginFailed);
       setStatusTone("error");
       setStatusScope("auth");
@@ -240,7 +235,7 @@ export default function SubmitPage({
         `${window.location.pathname}${queryString ? `?${queryString}` : ""}${window.location.hash}`
       );
     }
-  }, [t.status.githubLoginSuccess, t.status.loginFailed]);
+  }, [t.status.loginFailed]);
 
   function handleGitHubLogin() {
     const draft: SubmissionDraft = { ...form, tagText };
@@ -408,7 +403,7 @@ export default function SubmitPage({
             </button>
           ) : authState.authenticated ? (
             <button
-              className="ghost-button submit-button"
+              className="primary-button submit-button glow-button"
               title={authState.user ? t.submitPage.signedInAs(authState.user.login) : undefined}
               type="button"
               onClick={() => void handleGitHubLogout()}

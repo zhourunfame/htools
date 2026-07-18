@@ -291,7 +291,6 @@ export type Messages = {
   status: {
     loginFailed: string;
     sessionExpired: string;
-    githubLoginSuccess: string;
     githubLogoutSuccess: string;
     githubLogoutFailed: string;
     toolUpdated: string;

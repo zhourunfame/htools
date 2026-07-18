@@ -112,4 +112,4 @@ https://你的域名/api/github/callback
 
 ## 版本
 
-当前版本：`HTools v1.0.11`
+当前版本：`HTools v1.0.12`
