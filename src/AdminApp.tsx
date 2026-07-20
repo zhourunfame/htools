@@ -5292,28 +5292,39 @@ function AdminCategoryFilter({
           aria-haspopup="listbox"
         >
           <Tags size={16} />
-          <input
-            ref={searchRef}
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-                event.preventDefault();
-                event.stopPropagation();
-                focusCategoryOption(
-                  event.key === "ArrowDown" ? "first" : "last"
-                );
-                return;
-              }
+          <span className="admin-category-filter-search">
+            <input
+              ref={searchRef}
+              aria-label={displaySelectedLabel}
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  focusCategoryOption(
+                    event.key === "ArrowDown" ? "first" : "last"
+                  );
+                  return;
+                }
 
-              if (event.key === "Enter" && canCreateCategory) {
-                event.preventDefault();
-                event.stopPropagation();
-                selectCategory(createCategoryName);
-              }
-            }}
-            placeholder={displaySelectedLabel}
-          />
+                if (event.key === "Enter" && canCreateCategory) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  selectCategory(createCategoryName);
+                }
+              }}
+            />
+            {!query ? (
+              <span
+                aria-hidden="true"
+                className="admin-category-filter-value admin-category-filter-placeholder"
+                title={selectedLabel}
+              >
+                {displaySelectedLabel}
+              </span>
+            ) : null}
+          </span>
           <button
             className="admin-category-filter-arrow"
             type="button"
